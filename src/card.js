@@ -1,5 +1,5 @@
- class Card {
-    #data
+export class Card {
+    #data;
     #selectorTemplate;
     #element;
     #handleClickCatImage;

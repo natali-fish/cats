@@ -1,4 +1,4 @@
- const cats = [
+ export const cats = [
     {
       name: "Лара",
       img_link:

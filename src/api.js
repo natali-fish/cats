@@ -25,7 +25,7 @@ const config = {
 
 class Api {
     #getResponse(res) {
-        return res.ok ? res.json() : Promise.reject('щшибка на стороне сервера');
+        return res.ok ? res.json() : Promise.reject('oшибка на стороне сервера');
     }
 
     #baseUrl;
@@ -51,13 +51,13 @@ class Api {
             .then(this.#getResponse)
     }
 
-    addNewCat(data){
+    addNewCat(data) {
         return fetch(`${this.#baseUrl}/add`, {
-            headers: this.#headers,
-            body: JSON.stringify(data)
-        })
-            .then(this.#getResponse)
-    }
+          method: "POST",
+          headers: this.#headers,
+          body: JSON.stringify(data),
+        }).then(this.#getResponse);
+      }
     
     updateCatById(idCat, data){
         return fetch(`${this.#baseUrl}/update/${idCat}`, {
@@ -77,4 +77,4 @@ class Api {
 }
 
 
-  const api = new Api(config);
+  export const api = new Api(config);
