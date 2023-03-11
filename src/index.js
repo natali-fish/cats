@@ -3,6 +3,7 @@ import { api } from './api.js';
 import { Card } from './card.js';
 import { cats } from './cats.js';
 import { PopupWithImage } from './popup-image.js';
+import { PopupCatShow } from './popup-cat-show.js';
 import { Popup } from './popup.js';
 import './utils.js';
 
@@ -18,6 +19,7 @@ const MAX_LIVE_STORAGE = 10;
 const popupAdd = new Popup("popup-add");
 const popupImage = new PopupWithImage("popup-cat-image");
 const popupLogin = new Popup("popup-login");
+const popupShow = new PopupCatShow("popup-show-cat");
 
 function serializeForm(elements) {
   const formData = {};
@@ -36,7 +38,7 @@ function serializeForm(elements) {
 }
 
 function createCat(dataCat){
-  const newElement = new Card(dataCat, "#card-template", handleClickCatImage);
+  const newElement = new Card(dataCat, "#card-template", handleClickCatImage, handleClickCatName);
   cardsContainer.prepend(newElement.getElement());
 }
 
@@ -58,6 +60,12 @@ function handleFormAddCat(e) {
 function handleClickCatImage(dataSrc) {
   popupImage.open(dataSrc);
 }
+
+function handleClickCatName(data) {
+  popupShow.open(data)
+}
+
+
 
 function handleFormLogin(e){
   e.preventDefault();
@@ -150,5 +158,6 @@ if(!isAuth) {
 popupAdd.setEventListener();
 popupImage.setEventListener();
 popupLogin.setEventListener();
+popupShow.setEventListener();
 
 checkLocalStorage()

@@ -4,6 +4,8 @@
     padding: 0 60px;
     margin-left: auto;
     margin-right: auto;
+    color: rgb(13, 2, 27);
+    background-color:rgb(193, 120, 177);
 }
 @media (max-width:500px){
     .container {

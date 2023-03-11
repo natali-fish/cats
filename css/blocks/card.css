@@ -1,6 +1,7 @@
 .card {
-    height: 166px;
-    border-radius: 10px;
+    height: 200px;
+  
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,6 +29,8 @@
     margin: 0;
     border-radius: 10px;
     transition: padding 0.3s;
+    color:blue;
+    font-size: 20px;
 }
 
 .card:hover .card__name{
@@ -93,6 +96,14 @@
   transform: scale(1.2, 1.2);
   transition: 1s linear;
   box-shadow: 0 0 10px rgb(55, 0, 255), 10px 5px 5px rgb(0, 174, 255);
+}
+.fa-solid.fa-heart.fa-2x {
+  color:crimson;
+}
+.popup__container {
+  color:deeppink;
+  border-radius: 20px;
+  
 }
 
 @keyframes heartBeat {

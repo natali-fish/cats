@@ -6,7 +6,7 @@
     justify-items: start;
 }
 
-.cat-info__title {
+/* .cat-info__title {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -110,4 +110,4 @@
 
 .cat-info__age-val {
     padding: 5px;
-}
+} */
